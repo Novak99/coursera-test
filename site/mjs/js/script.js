@@ -36,7 +36,6 @@ if(grades.length>0){
 else{
   //alert("There is no numbers!");
 }
-
 var pass1= document.getElementById("pass1");
 var pass2= document.getElementById("pass2");
 function check(){
