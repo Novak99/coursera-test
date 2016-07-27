@@ -2,29 +2,52 @@
 <html>
 <head>
   <title>Module 2 Coding Assignment - Novak Lukic</title>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-<h1>Our menu</h1>
-<div class="row">
-<div class="col-lg-4 col-md-6">
-<section class="chicken">
-<h2>Chicken</h2>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, impedit doloremque molestias quam, eligendi beatae magni culpa amet eius facilis explicabo. At perferendis laudantium recusandae hic quas voluptatem porro temporibus.
-</section>
-</div>
-<div class="col-lg-4 col-md-6">
-<section class="beef">
-<h2>Beef</h2>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, impedit doloremque molestias quam, eligendi beatae magni culpa amet eius facilis explicabo. At perferendis laudantium recusandae hic quas voluptatem porro temporibus.
-</section></div>
-<div class="col-lg-4 col-md-12">
-<section class="sushi">
-<h2>Sushi</h2>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, impedit doloremque molestias quam, eligendi beatae magni culpa amet eius facilis explicabo. At perferendis laudantium recusandae hic quas voluptatem porro temporibus.
-</section></div>
-</div>
+<body onload="loadFruits()">
+<h1>Arrays</h1>
+<button onclick="addFruit()">Add Your Favorite!</button>
+<button onclick="removeFruit()">Remove last fruit!</button>
+<button onclick="removeFirstFruit()">Remove first fruit!</button>
+<p id="fruits"></p>
+<form>
+      <fieldset>
+          <legend>Input Types</legend>
+        <label>Name: <input type='text' id = 'name' name = 'name' ></label>
+        
+        <label>Email: <input type='email' name = 'email'> </label>
+
+         <label>Password: <input type='password' id="pass1" name = 'pass1' required></label>
+         <label>Confirm Password: <input  onchange="check()" type='password' name = 'pass2' id="pass2" required></label>
+        
+        Radio Buttons<br/>
+        <label><input type="radio" name="sex" value="male" checked>Male</label>
+
+        <label><input type="radio" name="sex" value="female">Female</label>
+
+        Checkboxes<br/>
+
+        <label> <input type="checkbox" name="contact1" value="Bike">Contact me via email</label>
+
+        <label> <input type="checkbox" name="contact2" value="Bike">Contact me via phone</label>
+        
+        <label>Number: <input type="number" name="numberInput" min="1" max="5"></label>
+
+        <label>Range: <input type="range" name="rangeInput" min="1" max="10"></label>
+
+         <label>Color: <input type="color" name="colorInput" min="1" max="10"></label>
+
+         <label>Date: <input type="date" name="dateInput"></label>
+
+         <label>URL: <input type="url" name="urlInput"></label>
+         <label>Credit card: <input type="text" pattern="[0-9]{13,16}" name="urlInput"></label>
+
+        <input type='submit' value="Click Here" onclick = "return check();">
+  </fieldset>
+</form> 
+
 <script src="js/script.js"></script>
 </body>
 </html>
