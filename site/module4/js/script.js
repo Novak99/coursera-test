@@ -201,20 +201,62 @@
 // console.log(myCircle2);
 
 // Object literals and "this"
-var literalCircle = {
-  radius: 10,
+// var literalCircle = {
+//   radius: 10,
 
-  getArea: function(){
-    var self = this;
-    console.log(this);
+//   getArea: function(){
+//     var self = this;
+//     console.log(this);
 
-    var increaseRadius = function() {
-      self.radius = 20;
-    };
-    increaseRadius();
-    console.log(this.radius);
-    return Math.PI * Math.pow(this.radius, 2)
-  }
-};
+//     var increaseRadius = function() {
+//       self.radius = 20;
+//     };
+//     increaseRadius();
+//     console.log(this.radius);
+//     return Math.PI * Math.pow(this.radius, 2)
+//   }
+// };
 
-console.log(literalCircle.getArea());
+//  console.log(literalCircle.getArea());
+
+// Arrays
+// var array = ["Novak", "81", function(name){console.log("Hello " + name);}, {course: "HTML5, CSS3 & JS"}];
+// console.log(array);
+// array[2](array[0]);
+// console.log(array[3].course);
+
+// var names = ["Novak", "Milos", "Milan"];
+// console.log(typeof names);
+// names[10] = "Nikola";
+
+// for(var i = 0; i < names.length;i++) {
+//   if(names[i] !== undefined)
+//     console.log("Zdravo " + names[i]);
+// }
+// for (var name in names){
+//   console.log("Hello " + names[name]);
+// }
+
+// var myObj = {
+//   name: "Novak",
+//   course: "HTML/CSS/JS",
+//   platform: "Coursera"
+// };
+
+// for (var prop in myObj) {
+//   console.log(prop + ": " + myObj[prop]);
+// }
+
+
+// Closures
+// function makeMultiplier(multiplier) {
+//     return(
+//       function(x) {
+//         return multiplier * x;
+//       }
+//     );
+//   }
+
+//   var doubleAll = makeMultiplier(2);
+//   console.log(doubleAll(10));
+

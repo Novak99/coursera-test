@@ -1,53 +1,52 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Module 2 Coding Assignment - Novak Lukic</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body onload="loadFruits()">
-<h1>Arrays</h1>
-<button onclick="addFruit()">Add Your Favorite!</button>
-<button onclick="removeFruit()">Remove last fruit!</button>
-<button onclick="removeFirstFruit()">Remove first fruit!</button>
-<p id="fruits"></p>
-<form>
-      <fieldset>
-          <legend>Input Types</legend>
-        <label>Name: <input type='text' id = 'name' name = 'name' ></label>
-        
-        <label>Email: <input type='email' name = 'email'> </label>
+<!DOCTYPE html><html lang="en">
+ <head> 
+  <meta charset="UTF-8">  
+    <title>Shipping and Billing</title> 
+    <style>   
+        input{      
+          border:1px solid black;
+  }   
+        input:focus{
+     background-color: #E6E6E6;   
+        }
+  fieldset{
+     margin-bottom: 4%;
+  } 
+    </style>
+  </head>
+  <body>
+  <h1>JavaScript Homework</h1>  
+        <p>Add the JavaScript code needed to enable auto-complete on this form.  Whenever the checkbox is checked, the code should automatically copy the values from Shipping Name and Shipping Zip into the Billing Name and Billing Zip.  If the checkbox is unchecked, the Billing Name and Billing Zip should go blank.</p>
 
-         <label>Password: <input type='password' id="pass1" name = 'pass1' required></label>
-         <label>Confirm Password: <input  onchange="check()" type='password' name = 'pass2' id="pass2" required></label>
-        
-        Radio Buttons<br/>
-        <label><input type="radio" name="sex" value="male" checked>Male</label>
+    <form>    
+        <fieldset>
+    <legend>Shipping Information</legend>       <label for ="shippingName">Name:</label>      <input type = "text" name = "Name" id = "shippingName" required><br/>
 
-        <label><input type="radio" name="sex" value="female">Female</label>
-
-        Checkboxes<br/>
-
-        <label> <input type="checkbox" name="contact1" value="Bike">Contact me via email</label>
-
-        <label> <input type="checkbox" name="contact2" value="Bike">Contact me via phone</label>
-        
-        <label>Number: <input type="number" name="numberInput" min="1" max="5"></label>
-
-        <label>Range: <input type="range" name="rangeInput" min="1" max="10"></label>
-
-         <label>Color: <input type="color" name="colorInput" min="1" max="10"></label>
-
-         <label>Date: <input type="date" name="dateInput"></label>
-
-         <label>URL: <input type="url" name="urlInput"></label>
-         <label>Credit card: <input type="text" pattern="[0-9]{13,16}" name="urlInput"></label>
-
-        <input type='submit' value="Click Here" onclick = "return check();">
+    <label for = "shippingzip">Zip code:</label>      <input type = "text" name = "zip" id = "shippingZip" pattern = "[0-9]{5}" required><br/>
+        </fieldset>
+  <input type="checkbox" id="same" name="same" onchange= "billingFunction()"/>    
+        <label for = "same">Is the Billing Information the Same?</label>            
+        <fieldset>
+    <legend>Billing Information</legend>        <label for ="billingName">Name:</label>     <input type = "text" name = "Name" id = "billingName" required><br/>
+     
+          <label for = "billingzip">Zip code:</label>     <input type = "text" name = "zip" id = "billingZip" pattern = "[0-9]{5}" required><br/>
   </fieldset>
-</form> 
 
-<script src="js/script.js"></script>
-</body>
+  <input type = "submit" value = "Verify"/> 
+    </form>
+    <script>
+      function billingFunction() {
+        var name = document.getElementById('shippingName').value;
+        var zip = document.getElementById('shippingZip').value;
+        if(document.getElementById('same').checked){
+          document.getElementById('billingName').setAttribute('value', name);
+          document.getElementById('billingZip').setAttribute('value', zip);
+        }
+        else {
+          document.getElementById('billingName').removeAttribute('value');
+          document.getElementById('billingZip').removeAttribute('value');
+        }
+      }
+    </script>
+  </body>
 </html>
